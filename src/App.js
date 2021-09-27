@@ -3,10 +3,10 @@ import React, { useState, useEffect } from "react";
 import Countdown from "./components/utils/Countdown";
 
 function App() {
-  const [timerDays, setTimerDays] = useState;
-  const [timerHours, setTimerHours] = useState;
-  const [timerMinutes, setTimerMinutes] = useState;
-  const [timerSeconds, setTimerSeconds] = useState;
+  const [timerDays, setTimerDays] = useState();
+  const [timerHours, setTimerHours] = useState();
+  const [timerMinutes, setTimerMinutes] = useState();
+  const [timerSeconds, setTimerSeconds] = useState();
 
   return (
     <div className="App">

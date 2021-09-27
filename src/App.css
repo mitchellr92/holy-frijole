@@ -1,5 +1,43 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
 .App {
   text-align: center;
+  height: 100vh;
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(270deg, #051817, #0e3839);
+  height: 180px;
+  width: 350px;
+  color: #06f1f6;
+  text-shadow: 1px 1px 1px;
+  border-radius: 15px;
+  border: 2px solid silver;
+}
+
+.timer section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.timer section small {
+  color: silver;
 }
 
 .App-logo {
@@ -36,3 +74,4 @@
     transform: rotate(360deg);
   }
 }
+
