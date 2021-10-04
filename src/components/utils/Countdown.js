@@ -37,7 +37,7 @@ const Countdown = () => {
   });
   return (
     <Fragment>
-      <section className="countdown-container">
+      <section className="countdown-container flex-direction-row">
         <section className="countdown">
           <div className="timer">
             <section>
