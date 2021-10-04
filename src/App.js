@@ -7,7 +7,6 @@ function App() {
   return (
     <div className="App">
       <Navigation />
-      Welcome to the Holy Frijole Chili Cook Off!
       <Countdown />
     </div>
   );

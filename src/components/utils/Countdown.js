@@ -37,25 +37,25 @@ const Countdown = () => {
   });
   return (
     <Fragment>
-      <section className="countdown-container flex-direction-row">
+      <section className="countdown-container">
         <section className="countdown">
-          <div className="timer">
-            <section>
+          <div className="timer d-flex justify-content-center">
+            <section className="d-flex flex-column align-items-center">
               <p>{timerDays}</p>
               <small>Days</small>
             </section>
             <span>:</span>
-            <section>
+            <section className="d-flex flex-column align-items-center">
               <p>{timerHours}</p>
               <small>Hours</small>
             </section>
             <span>:</span>
-            <section>
+            <section className="d-flex flex-column align-items-center">
               <p>{timerMinutes}</p>
               <small>Minutes</small>
             </section>
             <span>:</span>
-            <section>
+            <section className="d-flex flex-column align-items-center">
               <p>{timerSeconds}</p>
               <small>Seconds</small>
             </section>
