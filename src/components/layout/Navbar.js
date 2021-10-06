@@ -1,6 +1,10 @@
 import React from "react";
 
-const Navigation = () => {
+const onClick = () => {
+  console.log('button was clicked')
+}
+
+const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container-fluid">
@@ -29,12 +33,12 @@ const Navigation = () => {
         <div className="d-flex">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a href="#!" className="nav-link">
+              <a href="#!" className="nav-link" onClick={onClick}>
                 <i className="fas fa-sign-in-alt"></i> Sign In
               </a>
             </li>
             <li className="nav-item">
-              <a href="#!" className="nav-link">
+              <a href="#!" className="nav-link" onClick={onClick}>
                 <i className="fas fa-user-plus"></i> Create Account
               </a>
             </li>
@@ -45,4 +49,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default Navbar;
