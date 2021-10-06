@@ -4,19 +4,18 @@ import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import Countdown from "./components/utils/Countdown";
 import SignIn from "./components/auth/SignIn";
-import Register from "./components/auth/Register";
+import CreateAccount from "./components/auth/CreateAccount";
 
 function App() {
   return (
     <Router>
       <Fragment>
         <Navbar />
-        <Countdown />
         <div className="container">
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/login" component={SignIn} />
-            <Route exact path="/register" component={Register} />
+            <Route exact path="/signup" component={CreateAccount} />
           </Switch>
         </div>
       </Fragment>

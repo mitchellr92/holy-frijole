@@ -32,6 +32,8 @@ const Countdown = () => {
     });
   };
 
+  const countdown = "d-flex flex-column align-items-center w-25";
+
   useEffect(() => {
     startTimer();
   });
@@ -39,25 +41,25 @@ const Countdown = () => {
     <Fragment>
       <section className="countdown-container">
         <section className="countdown">
-          <div className="timer d-flex justify-content-center">
-            <section className="d-flex flex-column align-items-center">
-              <p>{timerDays}</p>
-              <small>Days</small>
+          <div className="timer d-flex justify-content-center align-items-center w-50 m-auto">
+            <section className={countdown}>
+              <h4>{timerDays}</h4>
+              <h5>Days</h5>
             </section>
-            <span>:</span>
-            <section className="d-flex flex-column align-items-center">
-              <p>{timerHours}</p>
-              <small>Hours</small>
+            <h3>:</h3>
+            <section className={countdown}>
+              <h4>{timerHours}</h4>
+              <h5>Hours</h5>
             </section>
-            <span>:</span>
-            <section className="d-flex flex-column align-items-center">
-              <p>{timerMinutes}</p>
-              <small>Minutes</small>
+            <h3>:</h3>
+            <section className={countdown}>
+              <h4>{timerMinutes}</h4>
+              <h5>Minutes</h5>
             </section>
-            <span>:</span>
-            <section className="d-flex flex-column align-items-center">
-              <p>{timerSeconds}</p>
-              <small>Seconds</small>
+            <h3>:</h3>
+            <section className={countdown}>
+              <h4>{timerSeconds}</h4>
+              <h5>Seconds</h5>
             </section>
           </div>
         </section>

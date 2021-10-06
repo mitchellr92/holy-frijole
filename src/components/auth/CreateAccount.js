@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Register = () => {
+const CreateAccount = () => {
   return (
     <div className="form-container">
       <h1>
@@ -51,4 +51,4 @@ const Register = () => {
   );
 }
 
-export default Register
+export default CreateAccount
