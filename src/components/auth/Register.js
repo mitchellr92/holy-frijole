@@ -1,12 +1,20 @@
 import React from 'react'
 
-const SignIn = () => {
+const Register = () => {
   return (
     <div className="form-container">
       <h1>
-        Account <span className="text-primary">Sign In</span>
+        Create <span className="text-primary">Account</span>
       </h1>
       <form>
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            required
+          />
+        </div>
         <div className="form-group">
           <label htmlFor="email">Email Address</label>
           <input
@@ -21,6 +29,16 @@ const SignIn = () => {
             type="password"
             name="password"
             required
+            minLength="6"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="password2">Confirm Password</label>
+          <input
+            type="password"
+            name="password2"
+            required
+            minLength="6"
           />
         </div>
         <input
@@ -33,4 +51,4 @@ const SignIn = () => {
   );
 }
 
-export default SignIn
+export default Register
