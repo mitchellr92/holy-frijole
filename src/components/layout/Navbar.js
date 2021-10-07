@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 const guestLinks = (
   <Fragment>
     <li>
-      <Link to="/signup" className="nav-link">
+      <Link to="/register" className="nav-link">
         <i className="fas fa-user-plus"></i> Create Account
       </Link>
     </li>
     <li>
       <Link to="/login" className="nav-link">
-        <i className="fas fa-sign-in-alt"></i> Sign In
+        <i className="fas fa-sign-in-alt"></i> Login
       </Link>
     </li>
   </Fragment>

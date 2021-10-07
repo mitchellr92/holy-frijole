@@ -11,10 +11,12 @@ const Landing = () => {
       <h3 className="d-flex justify-content-center">Eat some chili soon...</h3>
       <Countdown />
       <div>
-        <Link to="/signup">
-          <button className="btn btn-primary">Create Account</button>
+        <Link to="/register">
+          <button className="btn btn-danger">Create Account</button>
         </Link>
-        <button className="btn btn-primary">Sign In</button>
+        <Link to="/login">
+          <button className="btn btn-danger">Login</button>
+        </Link>
       </div>
     </div>
   );

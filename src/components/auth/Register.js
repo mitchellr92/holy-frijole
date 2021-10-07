@@ -1,10 +1,10 @@
 import React from 'react'
 
-const CreateAccount = () => {
+const Register = () => {
   return (
     <div className="form-container">
       <h1>
-        Create <span className="text-primary">Account</span>
+        Create <span className="text-danger">Account</span>
       </h1>
       <form>
         <div className="form-group">
@@ -44,11 +44,11 @@ const CreateAccount = () => {
         <input
           type="submit"
           value="Register"
-          className="btn btn-primary btn-block"
+          className="btn btn-danger btn-block"
         />
       </form>
     </div>
   );
 }
 
-export default CreateAccount
+export default Register
