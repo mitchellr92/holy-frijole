@@ -1,36 +1,28 @@
-import React from 'react'
+import React from "react";
 
 const Login = () => {
   return (
-    <div className="form-container d-flex flex-column align-items-center border">
-      <h1>
-        Account <span className="text-danger">Sign In</span>
+    <div className="form-container d-flex flex-column align-items-center">
+      <h1 className="mb-4">
+        Account <span className="text-danger">Login</span>
       </h1>
-      <form className="border">
-        <div className="form-group">
-          <label htmlFor="email">Email Address</label>
-          <input
-            type="email"
-            name="email"
-            required
-          />
+      <form className="w-50 p-5 bg-secondary rounded">
+        <div className="form-group d-flex justify-content-between mb-3">
+          <label className="text-white h5" htmlFor="email">Email Address</label>
+          <input type="email" name="email" required />
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-          />
+        <div className="form-group d-flex justify-content-between mb-4">
+          <label className="text-white h5" htmlFor="password">Password</label>
+          <input type="password" name="password" required />
         </div>
         <input
           type="submit"
-          value="Register"
-          className="btn btn-danger btn-block"
+          value="Login"
+          className="btn btn-danger btn-block w-100"
         />
       </form>
     </div>
   );
-}
+};
 
-export default Login
+export default Login;

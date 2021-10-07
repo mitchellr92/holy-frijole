@@ -33,10 +33,10 @@ const guestLinks2 = (
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary px-5">
       <div className="container-fluid">
         <div className="d-flex">
-          <Link to="/" className="navbar-brand">
+          <Link to="/" className="h3 text-white me-3" style={{textDecoration: "none"}}>
             HFCCO
           </Link>
           <ul className="navbar-nav">
