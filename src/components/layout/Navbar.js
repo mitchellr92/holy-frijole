@@ -20,7 +20,7 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link
                   to="/gallery"
-                  className="fw-bold me-3 text-dark"
+                  className="fw-bold me-3 text-dark navbar-link"
                   style={{ textDecoration: "none" }}
                 >
                   Gallery
@@ -28,7 +28,7 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <Link
-                  className="fw-bold me-3 text-dark"
+                  className="fw-bold me-3 text-dark navbar-link"
                   to="/recipes"
                   style={{ textDecoration: "none" }}
                 >
@@ -37,7 +37,7 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <Link
-                  className="fw-bold me-3 text-dark"
+                  className="fw-bold me-3 text-dark navbar-link"
                   to="/bulletin"
                   style={{ textDecoration: "none" }}
                 >
@@ -46,7 +46,7 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <Link
-                  className="fw-bold me-3 text-dark"
+                  className="fw-bold me-3 text-dark navbar-link"
                   to="/rules"
                   style={{ textDecoration: "none" }}
                 >
@@ -55,7 +55,7 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <Link
-                  className="fw-bold me-3 text-dark"
+                  className="fw-bold me-3 text-dark navbar-link"
                   to="/signup"
                   style={{ textDecoration: "none" }}
                 >
@@ -65,7 +65,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/login"
-                  className="fw-bold me-3 text-dark"
+                  className="fw-bold me-3 text-dark navbar-link"
                   style={{ textDecoration: "none" }}
                 >
                   <i className="fas fa-sign-in-alt"></i> Login
@@ -74,7 +74,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/register"
-                  className="fw-bold me-3 text-dark"
+                  className="fw-bold me-3 text-dark navbar-link"
                   style={{ textDecoration: "none" }}
                 >
                   <i className="fas fa-user-plus"></i> Create Account
