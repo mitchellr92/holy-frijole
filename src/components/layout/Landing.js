@@ -8,14 +8,12 @@ const Landing = () => {
       <h2 className="d-flex justify-content-center">
         Welcome to the Holy Frijole Chili Cook Off!
       </h2>
-      <h3 className="d-flex justify-content-center">Eat some chili soon...</h3>
-      <Countdown />
-      <div>
-        <Link to="/register">
-          <button className="btn btn-danger">Create Account</button>
-        </Link>
+      <div className="d-flex flex-column">
         <Link to="/login">
-          <button className="btn btn-danger">Login</button>
+          <button className="btn btn-danger w-25 mb-3">Login</button>
+        </Link>
+        <Link to="/register">
+          <button className="btn btn-danger w-25">Create Account</button>
         </Link>
       </div>
     </div>
