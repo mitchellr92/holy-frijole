@@ -24,4 +24,21 @@ const AuthState = props => {
   };
 
   const [state, dispatch] = useReducer(AuthReducer, initialState)
+
+  // Load user
+  const loadUser = async () => {
+    if (localStorage.token) {
+      setAuthToken(localStorage.token)
+    }
+
+    try {
+      const res = await axios.get('/api/auth')
+
+      console.log(res.data._id)
+
+      dispatch({type: USER_LOADED, payload: res.data})
+    } catch (err) {
+      dispatch({type: AUTH_ERROR})
+    }
+  }
 };
