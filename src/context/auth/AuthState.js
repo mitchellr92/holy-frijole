@@ -11,7 +11,8 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
-  CLEAR_ERRORS
+  CLEAR_ERRORS,
+  REGISTER_SUCCESS
 } from "../types";
 
 const AuthState = props => {
@@ -41,6 +42,47 @@ const AuthState = props => {
       dispatch({ type: AUTH_ERROR });
     }
   };
+
+  // Register user
+  const register = async formData => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+
+    try {
+      const res = await axios.post("/api/users", formData, config);
+
+      dispatch({
+        type: REGISTER_SUCCESS,
+        payload: res.data
+      });
+
+      // loadUser();
+    } catch (err) {
+      dispatch({
+        type: REGISTER_FAIL,
+        payload: err.response.data.msg
+      });
+    }
+  };
+
+  return (
+    <AuthContext.Provider
+      value={{
+        token: state.token,
+        isAuthenticated: state.isAuthenticated,
+        loading: state.loading,
+        user: state.user,
+        error: state.error,
+        loadUser,
+        register
+      }}
+    >
+      {props.children}
+    </AuthContext.Provider>
+  );
 };
 
 export default AuthState;
