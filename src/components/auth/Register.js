@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/AuthContext";
 
-const Register = () => {
+const Register = props => {
   const authContext = useContext(AuthContext);
 
   const { register, error, clearErrors, isAuthenticated } = authContext;
@@ -24,6 +24,8 @@ const Register = () => {
     password: "",
     password2: ""
   });
+
+  const { name, email, password, password2 } = user;
 
   const onChange = e => {
     setUser({ ...user, [e.target.name]: e.target.value });
