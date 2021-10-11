@@ -18,6 +18,15 @@ export default (state, action) => {
         loading: false,
         user: action.payload
       };
+    case REGISTER_SUCCESS:
+    case LOGIN_SUCCESS:
+      localStorage.setItem("token", action.payload.token);
+      return {
+        ...state,
+        ...action.payload,
+        isAuthenticated: true,
+        loading: false
+      };
     default:
       return state;
   }
