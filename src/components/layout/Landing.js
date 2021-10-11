@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Countdown from "../utils/Countdown";
 
 const Landing = () => {
   return (
