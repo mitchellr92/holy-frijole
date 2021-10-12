@@ -4,15 +4,13 @@ import AuthContext from "./AuthContext";
 import AuthReducer from "./AuthReducer";
 import setAuthToken from "../../components/utils/setAuthToken";
 import {
-  REGISTER_SUCCESs,
+  REGISTER_SUCCESS,
   REGISTER_FAIL,
   USER_LOADED,
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
-  LOGOUT,
-  CLEAR_ERRORS,
-  REGISTER_SUCCESS
+  LOGOUT
 } from "../types";
 
 const AuthState = props => {
@@ -51,6 +49,8 @@ const AuthState = props => {
       }
     };
 
+    console.log('hello');
+
     try {
       const res = await axios.post(
         "http://localhost:5000/api/users",
@@ -63,7 +63,7 @@ const AuthState = props => {
         payload: res.data
       });
 
-      // loadUser();
+      loadUser();
     } catch (err) {
       dispatch({
         type: REGISTER_FAIL,
@@ -92,7 +92,8 @@ const AuthState = props => {
         payload: res.data
       });
 
-      // loadUser();
+      loadUser();
+      console.log("logged in");
     } catch (err) {
       dispatch({
         type: LOGIN_FAIL,
@@ -113,7 +114,8 @@ const AuthState = props => {
         error: state.error,
         loadUser,
         register,
-        login
+        login,
+        logout
       }}
     >
       {props.children}

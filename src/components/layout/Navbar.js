@@ -1,8 +1,58 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
+import AuthContext from "../../context/auth/AuthContext";
 import Countdown from "../utils/Countdown";
 
 const Navbar = () => {
+  const authContext = useContext(AuthContext);
+
+  const { isAuthenticated, logout, user } = authContext;
+
+  console.log(user)
+
+  const onLogout = () => {
+    logout();
+  };
+
+  const authLinks = (
+    <Fragment>
+      <li className="fw-bold me-3 text-dark">Hello {user && user.name}</li>
+      <li>
+        <a
+          onClick={onLogout}
+          href="#!"
+          className="fw-bold me-3 text-dark navbar-link"
+          style={{ textDecoration: "none" }}
+        >
+          <i className="fas fa-sign-out-alt"></i> <span>Logout</span>
+        </a>
+      </li>
+    </Fragment>
+  );
+
+  const guestLinks = (
+    <Fragment>
+      <li>
+        <Link
+          to="/login"
+          className="fw-bold me-3 text-dark navbar-link"
+          style={{ textDecoration: "none" }}
+        >
+          <i className="fas fa-sign-in-alt"></i> Login
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/register"
+          className="fw-bold me-3 text-dark navbar-link"
+          style={{ textDecoration: "none" }}
+        >
+          <i className="fas fa-user-plus"></i> Create Account
+        </Link>
+      </li>
+    </Fragment>
+  );
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white px-5">
       <div className="container-fluid">
@@ -62,7 +112,7 @@ const Navbar = () => {
                   Register
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/login"
                   className="fw-bold me-3 text-dark navbar-link"
@@ -79,7 +129,8 @@ const Navbar = () => {
                 >
                   <i className="fas fa-user-plus"></i> Create Account
                 </Link>
-              </li>
+              </li> */}
+              {isAuthenticated ? authLinks : guestLinks}
             </ul>
           </Fragment>
         </div>

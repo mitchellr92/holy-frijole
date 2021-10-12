@@ -35,7 +35,7 @@ const Login = props => {
       <h1 className="mb-4">
         Account <span className="text-danger">Login</span>
       </h1>
-      <form className="w-50 p-5 bg-secondary rounded">
+      <form className="w-50 p-5 bg-secondary rounded" onSubmit={onSubmit}>
         <div className="form-group d-flex justify-content-between mb-3">
           <label className="text-white h5" htmlFor="email">
             Email Address
@@ -55,7 +55,7 @@ const Login = props => {
           <input
             type="password"
             name="password"
-            value="password"
+            value={password}
             onChange={onChange}
             required
           />
