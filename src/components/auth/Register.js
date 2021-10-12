@@ -4,18 +4,13 @@ import AuthContext from "../../context/auth/AuthContext";
 const Register = props => {
   const authContext = useContext(AuthContext);
 
-  const { register, error, clearErrors, isAuthenticated } = authContext;
+  const { register, error, isAuthenticated } = authContext;
 
   useEffect(() => {
     if (isAuthenticated) {
       props.history.push("/");
     }
 
-    // if (error === "User already exists") {
-
-    // }
-
-    // eslint-disable-next-line
   }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({

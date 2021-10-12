@@ -4,7 +4,7 @@ import AuthContext from "../../context/auth/AuthContext";
 const Login = props => {
   const authContext = useContext(AuthContext);
 
-  const { login, error, clearErrors, isAuthenticated } = authContext;
+  const { login, error, isAuthenticated } = authContext;
 
   useEffect(() => {
     if (isAuthenticated) {
