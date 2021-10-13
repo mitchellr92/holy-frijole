@@ -22,17 +22,15 @@
   transform-origin: bottom left;
 }
 
-/* .landing, .landing2 {
-  position: relative;
-} */
+.landing {
+  position: absolute;
+}
 
 .carousel,
 .carousel-inner,
 .carousel-item,
 .carousel-item.active {
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: static;
   z-index: -10;
   height: 100vh;
 }

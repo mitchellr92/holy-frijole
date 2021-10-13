@@ -1,59 +1,33 @@
-import React from "react";
-// import { Link } from "react-router-dom";
-// import AuthContext from "../../context/auth/AuthContext";
-import chili1 from "../utils/photos/chili/chili1.jpg";
-import chili2 from "../utils/photos/chili/chili2.jpg";
-import chili3 from "../utils/photos/chili/chili3.jpg";
-import chili4 from "../utils/photos/chili/chili4.jpg";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import AuthContext from "../../context/auth/AuthContext";
+import Carousel from "./Carousel";
 
 const Landing = () => {
-  // const authContext = useContext(AuthContext);
+  const authContext = useContext(AuthContext);
 
-  // const { isAuthenticated } = authContext;
+  const { isAuthenticated } = authContext;
 
-  // const authLinks = (
-  //   <div className="d-flex flex-column">
-  //     <Link to="/login">
-  //       <button className="btn btn-danger w-25 mb-3">Login</button>
-  //     </Link>
-  //     <Link to="/register">
-  //       <button className="btn btn-danger w-25">Create Account</button>
-  //     </Link>
-  //   </div>
-  // );
-
-  const carousel = (
-    <div
-      id="carouselExampleFade"
-      className="carousel slide carousel-fade w-100"
-      data-bs-ride="carousel"
-    >
-      <div className="carousel-inner">
-        <div className="carousel-item active" data-bs-interval="4000">
-          <img src={chili1} alt="Pot of chili..." className="d-block w-100" />
-        </div>
-        <div className="carousel-item" data-bs-interval="4000">
-          <img src={chili2} alt="Pot of chili..." className="d-block w-100" />
-        </div>
-        <div className="carousel-item" data-bs-interval="4000">
-          <img src={chili3} alt="Pot of chili..." className="d-block w-100" />
-        </div>
-        <div className="carousel-item" data-bs-interval="4000">
-          <img src={chili4} alt="Pot of chili..." className="d-block w-100" />
-        </div>
-      </div>
+  const authLinks = (
+    <div className="d-flex flex-column w-100 p-5">
+      <Link className="w-50 mx-auto" to="/login">
+        <button className="btn btn-primary w-100 mb-3">Login</button>
+      </Link>
+      <Link className="w-50 mx-auto" to="/register">
+        <button className="btn btn-primary w-100">Create Account</button>
+      </Link>
     </div>
   );
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">
-      {/* <div className="landing border border-danger m-5">
-        <h2 className="d-flex justify-content-center">
+      <Carousel />
+      <div className="landing d-flex flex-column align-items-center justify-content-center">
+        <h1 className="text-white">
           Welcome to the Holy Frijole Chili Cook Off!
-        </h2>
-        <div>{isAuthenticated ? "" : authLinks}</div>
-      </div> */}
-      {carousel}
+        </h1>
+        {isAuthenticated ? "" : authLinks}
+      </div>
     </div>
   );
 };
