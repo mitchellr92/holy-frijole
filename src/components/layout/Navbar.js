@@ -33,7 +33,7 @@ const Navbar = () => {
       <li>
         <Link
           to="/login"
-          className="fw-bold mb-2 text-dark navbar-link"
+          className="fw-bold mb-2 ms-3 text-dark navbar-link"
           style={{ textDecoration: "none" }}
         >
           <i className="fas fa-sign-in-alt"></i> Login
@@ -42,7 +42,7 @@ const Navbar = () => {
       <li>
         <Link
           to="/register"
-          className="fw-bold mb-2 text-dark navbar-link"
+          className="fw-bold mb-2 ms-3 text-dark navbar-link"
           style={{ textDecoration: "none" }}
         >
           <i className="fas fa-user-plus"></i> Create Account
@@ -54,12 +54,13 @@ const Navbar = () => {
   const smNav = (
     <div className="p-3">
       <div className="collapse" id="navbarToggleExternalContent">
+        <Countdown />
         <div className="bg-white">
           <ul className="navbar-nav d-flex">
             <li className="nav-item">
               <Link
                 to="/gallery"
-                className="fw-bold m-2 text-dark navbar-link"
+                className="fw-bold mb-2 ms-3 text-dark navbar-link"
                 style={{ textDecoration: "none" }}
               >
                 Gallery
@@ -67,7 +68,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link
-                className="fw-bold m-2 text-dark navbar-link"
+                className="fw-bold mb-2 ms-3 text-dark navbar-link"
                 to="/recipes"
                 style={{ textDecoration: "none" }}
               >
@@ -76,7 +77,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link
-                className="fw-bold m-2 text-dark navbar-link"
+                className="fw-bold mb-2 ms-3 text-dark navbar-link"
                 to="/bulletin"
                 style={{ textDecoration: "none" }}
               >
@@ -85,7 +86,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link
-                className="fw-bold m-2 text-dark navbar-link"
+                className="fw-bold mb-2 ms-3 text-dark navbar-link"
                 to="/rules"
                 style={{ textDecoration: "none" }}
               >
@@ -94,14 +95,51 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link
-                className="fw-bold m-2 text-dark navbar-link"
+                className="fw-bold mb-2 ms-3 text-dark navbar-link"
                 to="/signup"
                 style={{ textDecoration: "none" }}
               >
                 Register
               </Link>
             </li>
-            {isAuthenticated ? authLinks : guestLinks}
+            {isAuthenticated ? (
+              <Fragment>
+                <li className="fw-bold mb-2 ms-3 text-dark">
+                  Hello {user && user.name}
+                </li>
+                <li>
+                  <a
+                    onClick={onLogout}
+                    href="#!"
+                    className="fw-bold mb-2 ms-3 text-dark navbar-link"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <i className="fas fa-sign-out-alt"></i> <span>Logout</span>
+                  </a>
+                </li>
+              </Fragment>
+            ) : (
+              <Fragment>
+                <li>
+                  <Link
+                    to="/login"
+                    className="fw-bold mb-2 ms-3 text-dark navbar-link"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <i className="fas fa-sign-in-alt"></i> Login
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/register"
+                    className="fw-bold mb-2 ms-3 text-dark navbar-link"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <i className="fas fa-user-plus"></i> Create Account
+                  </Link>
+                </li>
+              </Fragment>
+            )}
           </ul>
         </div>
       </div>
@@ -196,8 +234,8 @@ const Navbar = () => {
 
   return (
     <div>
-      {/* <div>{lgNav}</div> */}
-      <div>{smNav}</div>
+      <div className="lgNav">{lgNav}</div>
+      <div className="smNav">{smNav}</div>
     </div>
   );
 };
