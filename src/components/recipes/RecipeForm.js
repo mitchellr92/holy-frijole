@@ -2,8 +2,9 @@ import React from "react";
 
 const RecipeForm = () => {
   return (
-    <div className="d-flex">
-      <form className="border border-danger p-5 m-auto w-50">
+    <div className="d-flex flex-column">
+      <h1 className="m-auto mb-4">Add Your Recipe</h1>
+      <form className="border rounded border-danger p-5 mb-5 m-auto w-75">
         <div className="d-flex">
           <div className="me-5">
             <h4>Team Name</h4>
