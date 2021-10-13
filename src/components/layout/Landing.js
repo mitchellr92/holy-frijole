@@ -1,6 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/auth/AuthContext";
+import chili1 from "../utils/photos/chili/chili1.jpg";
+import chili2 from "../utils/photos/chili/chili2.jpg";
+import chili3 from "../utils/photos/chili/chili3.jpg";
+import chili4 from "../utils/photos/chili/chili4.jpg";
 
 const Landing = () => {
   const authContext = useContext(AuthContext);
@@ -17,12 +21,37 @@ const Landing = () => {
       </Link>
     </div>
   );
+
+  const carousel = (
+    <div
+      id="carouselExampleFade"
+      className="carousel slide carousel-fade w-100"
+      data-bs-ride="carousel"
+    >
+      <div className="carousel-inner">
+        <div className="carousel-item active" data-bs-interval="3000">
+          <img src={chili1} alt="Pot of chili..." className="d-block w-100"/>
+        </div>
+        <div className="carousel-item" data-bs-interval="3000">
+          <img src={chili2} alt="Pot of chili..." className="d-block w-100"/>
+        </div>
+        <div className="carousel-item" data-bs-interval="3000">
+          <img src={chili3} alt="Pot of chili..." className="d-block w-100"/>
+        </div>
+        <div className="carousel-item" data-bs-interval="3000">
+          <img src={chili4} alt="Pot of chili..." className="d-block w-100"/>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div>
       <h2 className="d-flex justify-content-center">
         Welcome to the Holy Frijole Chili Cook Off!
       </h2>
-      {isAuthenticated ? "" : authLinks}
+      <div>{isAuthenticated ? "" : authLinks}</div>
+      {carousel}
     </div>
   );
 };
