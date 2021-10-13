@@ -38,7 +38,7 @@ const Countdown = () => {
   return (
     <Fragment>
       <section className="countdown-container">
-        <section className="countdown d-flex align-items-end text-dark fw-bold">
+        <section className="countdown d-flex flex-column flex-xxl-row align-items-xxl-end text-dark fw-bold">
           <small className="me-2 mb-0">Eat some chili soon...</small>
           <div className="timer d-flex justify-content-center align-items-center">
             <div className="d-flex flex-column align-items-center">

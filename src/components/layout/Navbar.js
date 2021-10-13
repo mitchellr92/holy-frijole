@@ -54,13 +54,13 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white px-5 sticky-top">
+    <nav className="navbar navbar-expand-lg navbar-light bg-white px-lg-5 sticky-top">
       <div className="container-fluid">
-        <div className="d-flex">
+        <div className="d-flex flex-column flex-xxl-row">
           <Fragment>
             <Link
               to="/"
-              className="text-dark me-4"
+              className="text-dark me-4 d-flex flex-xxl-column"
               style={{ textDecoration: "none" }}
             >
               <h5>Holy Frijole</h5>
@@ -112,24 +112,6 @@ const Navbar = () => {
                   Register
                 </Link>
               </li>
-              {/* <li>
-                <Link
-                  to="/login"
-                  className="fw-bold me-3 text-dark navbar-link"
-                  style={{ textDecoration: "none" }}
-                >
-                  <i className="fas fa-sign-in-alt"></i> Login
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/register"
-                  className="fw-bold me-3 text-dark navbar-link"
-                  style={{ textDecoration: "none" }}
-                >
-                  <i className="fas fa-user-plus"></i> Create Account
-                </Link>
-              </li> */}
               {isAuthenticated ? authLinks : guestLinks}
             </ul>
           </Fragment>
