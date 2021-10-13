@@ -14,7 +14,7 @@ function App() {
       <Router>
         <Fragment>
           <Navbar />
-          <div className="container">
+          <div className="">
             <Switch>
               <Route exact path="/" component={Landing} />
               <Route exact path="/login" component={Login} />

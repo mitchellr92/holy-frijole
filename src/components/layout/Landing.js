@@ -46,13 +46,13 @@ const Landing = () => {
   );
 
   return (
-    <div>
-      <div className="landing">
+    <div className="d-flex flex-column justify-content-center align-items-center">
+      {/* <div className="landing border border-danger m-5">
         <h2 className="d-flex justify-content-center">
           Welcome to the Holy Frijole Chili Cook Off!
         </h2>
         <div>{isAuthenticated ? "" : authLinks}</div>
-      </div>
+      </div> */}
       {carousel}
     </div>
   );
