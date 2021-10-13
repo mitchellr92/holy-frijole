@@ -32,8 +32,7 @@ const AuthState = props => {
 
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/auth" ||
-          "https://hfcco-backend.herokuapp.com/api/auth"
+        "https://hfcco-backend.herokuapp.com/api/auth"
       );
 
       console.log(res.data._id);
@@ -56,8 +55,7 @@ const AuthState = props => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/users" ||
-          "https://hfcco-backend.herokuapp.com/api/users",
+        "https://hfcco-backend.herokuapp.com/api/users",
         formData,
         config
       );
@@ -86,8 +84,7 @@ const AuthState = props => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth" ||
-          "https://hfcco-backend.herokuapp.com/api/auth",
+        "https://hfcco-backend.herokuapp.com/api/auth",
         formData,
         config
       );
