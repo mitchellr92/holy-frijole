@@ -33,7 +33,7 @@ const Navbar = () => {
       <li>
         <Link
           to="/login"
-          className="fw-bold mb-2 ms-3 text-dark navbar-link"
+          className="fw-bold me-3 text-dark navbar-link"
           style={{ textDecoration: "none" }}
         >
           <i className="fas fa-sign-in-alt"></i> Login
@@ -42,7 +42,7 @@ const Navbar = () => {
       <li>
         <Link
           to="/register"
-          className="fw-bold mb-2 ms-3 text-dark navbar-link"
+          className="fw-bold me-3 text-dark navbar-link"
           style={{ textDecoration: "none" }}
         >
           <i className="fas fa-user-plus"></i> Create Account
