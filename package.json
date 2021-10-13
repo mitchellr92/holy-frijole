@@ -41,5 +41,5 @@
   "devDependencies": {
     "web-vitals": "^2.1.0"
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "https://hfcco-backend.herokuapp.com"
 }
