@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
+import RecipeContext from "../../context/recipes/RecipeContext";
 
 const RecipeForm = () => {
+  const recipeContext = useContext(RecipeContext)
+
+  const { addRecipe } = recipeContext;
+
+  useEffect(() => {
+    
+  })
+
   return (
     <div className="d-flex flex-column">
       <h1 className="m-auto mb-4">Add Your Recipe</h1>

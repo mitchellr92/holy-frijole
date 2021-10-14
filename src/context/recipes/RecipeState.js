@@ -4,7 +4,7 @@ import RecipeContext from "./RecipeContext";
 import RecipeReducer from "./RecipeReducer";
 import {
   GET_RECIPES,
-  // ADD_RECIPE,
+  ADD_RECIPE,
   // DELETE_RECIPE,
   // SET_CURRENT,
   // CLEAR_CURRENT,
@@ -12,6 +12,7 @@ import {
   // FILTER_RECIPES,
   // CLEAR_FILTER,
   RECIPE_ERROR,
+  SET_CURRENT
   // CLEAR_RECIPES
 } from "../types";
 
@@ -40,12 +41,42 @@ const RecipeState = props => {
     }
   };
 
+  // Add recipe
+  const addRecipe = async recipe => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+
+    try {
+      const res = await axios.post("/api/add-recipe", recipe, config);
+
+      dispatch({
+        type: ADD_RECIPE,
+        payload: res.data
+      });
+    } catch (err) {
+      dispatch({
+        type: RECIPE_ERROR,
+        payload: err.msg
+      });
+    }
+  };
+
+  // Set current recipe
+  const setRecipe = recipe => {
+    dispatch({ type: SET_CURRENT, payload: recipe });
+  };
+
   return (
     <RecipeContext.Provider
       value={{
         recipes: state.recipes,
         error: state.error,
-        getRecipes
+        getRecipes,
+        addRecipe,
+        setRecipe
       }}
     >
       {props.children}

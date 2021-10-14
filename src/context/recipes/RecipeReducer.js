@@ -1,6 +1,6 @@
 import {
   GET_RECIPES,
-  // ADD_RECIPE,
+  ADD_RECIPE
   // DELETE_RECIPE,
   // SET_CURRENT,
   // CLEAR_CURRENT,
@@ -17,6 +17,12 @@ const RecipeReducer = (state, action) => {
       return {
         ...state,
         recipes: action.payload,
+        loading: false
+      };
+    case ADD_RECIPE:
+      return {
+        ...state,
+        recipes: [action.payload, ...state.recipes],
         loading: false
       };
     default:
