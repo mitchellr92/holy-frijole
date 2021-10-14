@@ -155,7 +155,7 @@ const Navbar = () => {
             aria-label="Toggle navigation"
           >
             <h5 className="mb-0 me-4">Holy Frijole Chili Cook Off</h5>
-            <i class="fas fa-bars"></i>
+            <i className="fas fa-bars"></i>
           </button>
         </div>
       </nav>

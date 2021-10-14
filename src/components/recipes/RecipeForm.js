@@ -6,41 +6,63 @@ const RecipeForm = () => {
 
   const { addRecipe, current } = recipeContext;
 
-  useEffect(() => {
-    if (current !== null) {
-      setRecipe(current);
-    } else {
-      setRecipe({
-        teamName: "",
-        recipeName: "",
-        ingredients: [],
-        directions: "",
-        cookTime: ""
-      });
-    }
-  }, [recipeContext, current]);
+  // useEffect(() => {
+  //   console.log("run once");
+  //   if (current !== null) {
+  //     setRecipe(current);
+  //   } else {
+  //     setRecipe({
+  //       teamName: "",
+  //       recipeName: "",
+  //       ingredients: [],
+  //       directions: "",
+  //       cookTime: ""
+  //     });
+  //   }
+  // }, [recipeContext, current]);
 
   const [recipe, setRecipe] = useState({
     teamName: "",
     recipeName: "",
-    ingredients: [],
+    ingredients: ["", "", "", "", "", "", "", ""],
     directions: "",
     cookTime: ""
   });
 
   const { teamName, recipeName, ingredients, directions, cookTime } = recipe;
 
-  const onChange = e =>
-    setRecipe({ ...recipe, [e.target.value]: e.target.value });
+  const onChange = e => {
+    e.preventDefault();
+    setRecipe({ ...recipe, [e.target.name]: e.target.value });
+  };
 
   const onSubmit = e => {
     e.preventDefault();
-    if (current === null) {
-      addRecipe(recipe);
-    } else {
-      // updateRecipe(recipe);
-    }
+    addRecipe(recipe);
   };
+
+
+
+  const onClick = () => {
+    ingredients.push(
+      <li className="ms-5 mb-3">
+        <input type="text" />
+      </li>
+    );
+
+    console.log(ingredients[0]);
+  };
+
+  ingredients.push(
+    <div className="ms-5 mb-3">
+      <input
+        type="submit"
+        value="Add Ingredient +"
+        onClick={onClick}
+        className="btn btn-primary btn-block"
+      />
+    </div>
+  );
 
   return (
     <div className="d-flex flex-column">
@@ -73,36 +95,30 @@ const RecipeForm = () => {
         </div>
         <div>
           <h4>Ingredients</h4>
-          <ol className="d-flex flex-wrap">
+          <ol className="d-flex flex-wrap border border-danger">
             <li className="ms-5 mb-3">
-              <input type="text" />
+              <input type="text" value={ingredients[0]} onChange={onChange}/>
             </li>
             <li className="ms-5 mb-3">
-              <input type="text" />
+              <input type="text" value={ingredients[1]} onChange={onChange}/>
             </li>
             <li className="ms-5 mb-3">
-              <input type="text" />
+              <input type="text" value={ingredients[2]} onChange={onChange}/>
             </li>
             <li className="ms-5 mb-3">
-              <input type="text" />
+              <input type="text" value={ingredients[3]} onChange={onChange}/>
             </li>
             <li className="ms-5 mb-3">
-              <input type="text" />
+              <input type="text" value={ingredients[4]} onChange={onChange}/>
             </li>
             <li className="ms-5 mb-3">
-              <input type="text" />
+              <input type="text" value={ingredients[5]} onChange={onChange}/>
             </li>
             <li className="ms-5 mb-3">
-              <input type="text" />
+              <input type="text" value={ingredients[6]} onChange={onChange}/>
             </li>
             <li className="ms-5 mb-3">
-              <input type="text" />
-            </li>
-            <li className="ms-5 mb-3">
-              <input type="text" />
-            </li>
-            <li className="ms-5 mb-3">
-              <input type="text" />
+              <input type="text" value={ingredients[7]} onChange={onChange}/>
             </li>
           </ol>
         </div>
@@ -112,6 +128,7 @@ const RecipeForm = () => {
             className="form-control"
             type="text"
             name="directions"
+            placeholder="Directions..."
             value={directions}
             onChange={onChange}
             cols="300"
@@ -123,8 +140,16 @@ const RecipeForm = () => {
           <input
             type="text"
             name="cookTime"
+            placeholder="Cooking Time"
             value={cookTime}
             onChange={onChange}
+          />
+        </div>
+        <div>
+          <input
+            type="submit"
+            value="Add Recipe"
+            className="btn btn-primary btn-block"
           />
         </div>
       </form>
