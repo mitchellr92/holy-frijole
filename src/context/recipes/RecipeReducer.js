@@ -1,17 +1,17 @@
 import {
   GET_RECIPES,
-  ADD_RECIPE,
-  DELETE_RECIPE,
-  SET_CURRENT,
-  CLEAR_CURRENT,
-  UPDATE_RECIPE,
-  FILTER_RECIPES,
-  CLEAR_FILTER,
-  RECIPE_ERROR,
-  CLEAR_RECIPES
-} from "./types";
+  // ADD_RECIPE,
+  // DELETE_RECIPE,
+  // SET_CURRENT,
+  // CLEAR_CURRENT,
+  // UPDATE_RECIPE,
+  // FILTER_RECIPES,
+  // CLEAR_FILTER,
+  // RECIPE_ERROR,
+  // CLEAR_RECIPES
+} from "../types";
 
-const recipeReducer = (state, action) => {
+const RecipeReducer = (state, action) => {
   switch (action.type) {
     case GET_RECIPES:
       return {
@@ -24,4 +24,4 @@ const recipeReducer = (state, action) => {
   }
 };
 
-export default recipeReducer;
+export default RecipeReducer;

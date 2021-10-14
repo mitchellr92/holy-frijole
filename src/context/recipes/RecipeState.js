@@ -1,19 +1,19 @@
 import React, { useReducer } from "react";
 import axios from "axios";
-import recipeContext from "./RecipeContext";
-import recipeReducer from "./RecipeReducer";
+import RecipeContext from "./RecipeContext";
+import RecipeReducer from "./RecipeReducer";
 import {
   GET_RECIPES,
-  ADD_RECIPE,
-  DELETE_RECIPE,
-  SET_CURRENT,
-  CLEAR_CURRENT,
-  UPDATE_RECIPE,
-  FILTER_RECIPES,
-  CLEAR_FILTER,
+  // ADD_RECIPE,
+  // DELETE_RECIPE,
+  // SET_CURRENT,
+  // CLEAR_CURRENT,
+  // UPDATE_RECIPE,
+  // FILTER_RECIPES,
+  // CLEAR_FILTER,
   RECIPE_ERROR,
-  CLEAR_RECIPES
-} from "./types";
+  // CLEAR_RECIPES
+} from "../types";
 
 const RecipeState = props => {
   const initialState = {
@@ -21,7 +21,7 @@ const RecipeState = props => {
     error: null
   };
 
-  const [state, dispatch] = useReducer(recipeReducer, initialState);
+  const [state, dispatch] = useReducer(RecipeReducer, initialState);
 
   // Get recipes
   const getRecipes = async () => {
@@ -41,7 +41,7 @@ const RecipeState = props => {
   };
 
   return (
-    <recipeContext.Provider
+    <RecipeContext.Provider
       value={{
         recipes: state.recipes,
         error: state.error,
@@ -49,7 +49,7 @@ const RecipeState = props => {
       }}
     >
       {props.children}
-    </recipeContext.Provider>
+    </RecipeContext.Provider>
   );
 };
 
