@@ -8,7 +8,7 @@ import {
   LOGOUT
 } from "../types";
 
-const AuthReducer = (state, action) => {
+const authReducer = (state, action) => {
   switch (action.type) {
     case USER_LOADED:
       return {
@@ -45,4 +45,4 @@ const AuthReducer = (state, action) => {
   }
 };
 
-export default AuthReducer;
+export default authReducer;

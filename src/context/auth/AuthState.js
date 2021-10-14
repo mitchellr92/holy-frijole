@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import axios from "axios";
 import AuthContext from "./AuthContext";
-import AuthReducer from "./AuthReducer";
+import authReducer from "./AuthReducer";
 import setAuthToken from "../../components/utils/setAuthToken";
 import {
   REGISTER_SUCCESS,
@@ -22,7 +22,7 @@ const AuthState = props => {
     error: null
   };
 
-  const [state, dispatch] = useReducer(AuthReducer, initialState);
+  const [state, dispatch] = useReducer(authReducer, initialState);
 
   // Load user
   const loadUser = async () => {
