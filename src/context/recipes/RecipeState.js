@@ -6,7 +6,6 @@ import {
   GET_RECIPES,
   ADD_RECIPE,
   // DELETE_RECIPE,
-  // SET_CURRENT,
   // CLEAR_CURRENT,
   // UPDATE_RECIPE,
   // FILTER_RECIPES,
@@ -19,6 +18,7 @@ import {
 const RecipeState = props => {
   const initialState = {
     recipes: null,
+    current: null,
     error: null
   };
 

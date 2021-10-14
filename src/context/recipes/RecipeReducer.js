@@ -1,8 +1,8 @@
 import {
   GET_RECIPES,
-  ADD_RECIPE
+  ADD_RECIPE,
   // DELETE_RECIPE,
-  // SET_CURRENT,
+  SET_CURRENT
   // CLEAR_CURRENT,
   // UPDATE_RECIPE,
   // FILTER_RECIPES,
@@ -24,6 +24,11 @@ const RecipeReducer = (state, action) => {
         ...state,
         recipes: [action.payload, ...state.recipes],
         loading: false
+      };
+    case SET_CURRENT:
+      return {
+        ...state,
+        current: action.payload
       };
     default:
       return state;
