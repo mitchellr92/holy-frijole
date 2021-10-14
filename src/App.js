@@ -8,25 +8,28 @@ import Recipes from "./components/recipes/Recipes";
 import RecipeForm from "./components/recipes/RecipeForm";
 
 import AuthState from "./context/auth/AuthState";
+import RecipeState from "./context/recipes/RecipeState";
 import "./App.css";
 
 function App() {
   return (
     <AuthState>
-      <Router>
-        <Fragment>
-          <Navbar />
-          <div className="">
-            <Switch>
-              <Route exact path="/" component={Landing} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/recipes" component={Recipes} />
-              <Route exact path="/add-recipe" component={RecipeForm} />
-            </Switch>
-          </div>
-        </Fragment>
-      </Router>
+      <RecipeState>
+        <Router>
+          <Fragment>
+            <Navbar />
+            <div className="">
+              <Switch>
+                <Route exact path="/" component={Landing} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/recipes" component={Recipes} />
+                <Route exact path="/add-recipe" component={RecipeForm} />
+              </Switch>
+            </div>
+          </Fragment>
+        </Router>
+      </RecipeState>
     </AuthState>
   );
 }

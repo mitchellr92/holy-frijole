@@ -15,7 +15,7 @@ import {
   CLEAR_RECIPES
 } from "./types";
 
-const recipeState = props => {
+const RecipeState = props => {
   const initialState = {
     recipes: null,
     error: null
@@ -39,4 +39,18 @@ const recipeState = props => {
       });
     }
   };
+
+  return (
+    <recipeContext.Provider
+      value={{
+        recipes: state.recipes,
+        error: state.error,
+        getRecipes
+      }}
+    >
+      {props.children}
+    </recipeContext.Provider>
+  );
 };
+
+export default RecipeState;
