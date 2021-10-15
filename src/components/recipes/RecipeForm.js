@@ -25,16 +25,13 @@ const RecipeForm = () => {
   const onChange = e => {
     e.preventDefault();
     setRecipe({ ...recipe, [e.target.name]: e.target.value });
+    console.log(e.target.name, e.target.value, recipe);
   };
 
   let ingredientsArray = [];
 
   for (let i = 0; i < 10; i++) {
-    ingredientsArray.push(
-      <li className="ms-5 mb-3">
-        <input type="text" onChange={onChange} />
-      </li>
-    );
+    ingredientsArray.push("");
   }
 
   const [recipe, setRecipe] = useState({
@@ -53,14 +50,12 @@ const RecipeForm = () => {
   };
 
   const onClick = () => {
-    ingredientsArray.push(
-      <li className="ms-5 mb-3">
-        <input type="text" onChange={onChange} />
-      </li>
-    );
+    ingredientsArray.push("");
+    console.log(recipe);
   };
-  
-  console.log(recipe);
+
+  console.log(ingredientsArray[0]);
+
   return (
     <div className="d-flex flex-column">
       <h1 className="m-auto mb-4">Add Your Recipe</h1>
@@ -93,7 +88,76 @@ const RecipeForm = () => {
         <div>
           <h4>Ingredients</h4>
           <ol className="d-flex flex-wrap border border-danger">
-            {ingredientsArray}
+            <input
+              type="text"
+              placeholder="Ingredient"
+              name="ingredients"
+              value={ingredients}
+              onChange={onChange}
+            />
+            <input
+              type="text"
+              placeholder="Ingredient"
+              name="ingredient"
+              value={ingredientsArray[1]}
+              onChange={onChange}
+            />
+            <input
+              type="text"
+              placeholder="Ingredient"
+              name="ingredient"
+              value={ingredientsArray[2]}
+              onChange={onChange}
+            />
+            <input
+              type="text"
+              placeholder="Ingredient"
+              name="ingredient"
+              value={ingredientsArray[3]}
+              onChange={onChange}
+            />
+            <input
+              type="text"
+              placeholder="Ingredient"
+              name="ingredient"
+              value={ingredientsArray[4]}
+              onChange={onChange}
+            />
+            <input
+              type="text"
+              placeholder="Ingredient"
+              name="ingredient"
+              value={ingredientsArray[5]}
+              onChange={onChange}
+            />
+            <input
+              type="text"
+              placeholder="Ingredient"
+              name="ingredient"
+              value={ingredientsArray[6]}
+              onChange={onChange}
+            />
+            <input
+              type="text"
+              placeholder="Ingredient"
+              name="ingredient"
+              value={ingredientsArray[7]}
+              onChange={onChange}
+            />
+            <input
+              type="text"
+              placeholder="Ingredient"
+              name="ingredient"
+              value={ingredientsArray[8]}
+              onChange={onChange}
+            />
+            <input
+              type="text"
+              placeholder="Ingredient"
+              name="ingredient"
+              value={ingredientsArray[9]}
+              onChange={onChange}
+            />
           </ol>
           <div className="ms-5 mb-3">
             <input
