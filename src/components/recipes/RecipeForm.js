@@ -1,69 +1,66 @@
 import React, { useState, useContext, useEffect } from "react";
 import RecipeContext from "../../context/recipes/RecipeContext";
+import IngredientArray from "./IngredientArray";
 
 const RecipeForm = () => {
   const recipeContext = useContext(RecipeContext);
 
   const { addRecipe, current } = recipeContext;
 
-  // useEffect(() => {
-  //   console.log("run once");
-  //   if (current !== null) {
-  //     setRecipe(current);
-  //   } else {
-  //     setRecipe({
-  //       teamName: "",
-  //       recipeName: "",
-  //       ingredients: [],
-  //       directions: "",
-  //       cookTime: ""
-  //     });
-  //   }
-  // }, [recipeContext, current]);
-
-  const [recipe, setRecipe] = useState({
-    teamName: "",
-    recipeName: "",
-    ingredients: ["", "", "", "", "", "", "", ""],
-    directions: "",
-    cookTime: ""
-  });
-
-  const { teamName, recipeName, ingredients, directions, cookTime } = recipe;
+  useEffect(() => {
+    console.log("run once");
+    // if (current !== null) {
+    //   setRecipe(current);
+    // } else {
+    //   setRecipe({
+    //     teamName: "",
+    //     recipeName: "",
+    //     ingredients: [],
+    //     directions: "",
+    //     cookTime: ""
+    //   });
+    // }
+  }, [recipeContext, current]);
 
   const onChange = e => {
     e.preventDefault();
     setRecipe({ ...recipe, [e.target.name]: e.target.value });
   };
 
+  let ingredientsArray = [];
+
+  for (let i = 0; i < 10; i++) {
+    ingredientsArray.push(
+      <li className="ms-5 mb-3">
+        <input type="text" onChange={onChange} />
+      </li>
+    );
+  }
+
+  const [recipe, setRecipe] = useState({
+    teamName: "",
+    recipeName: "",
+    ingredients: ingredientsArray,
+    directions: "",
+    cookTime: ""
+  });
+
+  const { teamName, recipeName, ingredients, directions, cookTime } = recipe;
+
   const onSubmit = e => {
     e.preventDefault();
     addRecipe(recipe);
   };
 
-
-
   const onClick = () => {
-    ingredients.push(
+    ingredientsArray.push(
       <li className="ms-5 mb-3">
-        <input type="text" />
+        <input type="text" onChange={onChange} />
       </li>
     );
-
-    console.log(ingredients[0]);
   };
-
-  ingredients.push(
-    <div className="ms-5 mb-3">
-      <input
-        type="submit"
-        value="Add Ingredient +"
-        onClick={onClick}
-        className="btn btn-primary btn-block"
-      />
-    </div>
-  );
-
+  
+  console.log(recipe);
   return (
     <div className="d-flex flex-column">
       <h1 className="m-auto mb-4">Add Your Recipe</h1>
@@ -96,31 +93,16 @@ const RecipeForm = () => {
         <div>
           <h4>Ingredients</h4>
           <ol className="d-flex flex-wrap border border-danger">
-            <li className="ms-5 mb-3">
-              <input type="text" value={ingredients[0]} onChange={onChange}/>
-            </li>
-            <li className="ms-5 mb-3">
-              <input type="text" value={ingredients[1]} onChange={onChange}/>
-            </li>
-            <li className="ms-5 mb-3">
-              <input type="text" value={ingredients[2]} onChange={onChange}/>
-            </li>
-            <li className="ms-5 mb-3">
-              <input type="text" value={ingredients[3]} onChange={onChange}/>
-            </li>
-            <li className="ms-5 mb-3">
-              <input type="text" value={ingredients[4]} onChange={onChange}/>
-            </li>
-            <li className="ms-5 mb-3">
-              <input type="text" value={ingredients[5]} onChange={onChange}/>
-            </li>
-            <li className="ms-5 mb-3">
-              <input type="text" value={ingredients[6]} onChange={onChange}/>
-            </li>
-            <li className="ms-5 mb-3">
-              <input type="text" value={ingredients[7]} onChange={onChange}/>
-            </li>
+            {ingredientsArray}
           </ol>
+          <div className="ms-5 mb-3">
+            <input
+              type="submit"
+              value="Add Ingredient +"
+              onClick={onClick}
+              className="btn btn-primary btn-block"
+            />
+          </div>
         </div>
         <h4>Directions</h4>
         <div className="input-group">
