@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import RecipeContext from "../../context/recipes/RecipeContext";
 import IngredientArray from "./IngredientArray";
 
-const RecipeForm = () => {
+const RecipeForm = props => {
   const recipeContext = useContext(RecipeContext);
 
   const { addRecipe, current } = recipeContext;
@@ -26,6 +26,12 @@ const RecipeForm = () => {
     e.preventDefault();
     setRecipe({ ...recipe, [e.target.name]: e.target.value });
     console.log(e.target.name, e.target.value, recipe);
+  };
+
+  const onChange2 = e => {
+    e.preventDefault();
+    // e.target.name = e.target.value;
+    console.log(e.target.name, e.target.value);
   };
 
   let ingredientsArray = [];
@@ -91,72 +97,72 @@ const RecipeForm = () => {
             <input
               type="text"
               placeholder="Ingredient"
-              name="ingredients"
-              value={ingredients}
-              onChange={onChange}
+              name="ingredientsArray[0]"
+              value={ingredientsArray[0]}
+              onChange={onChange2}
             />
             <input
               type="text"
               placeholder="Ingredient"
               name="ingredient"
               value={ingredientsArray[1]}
-              onChange={onChange}
+              onChange={onChange2}
             />
             <input
               type="text"
               placeholder="Ingredient"
               name="ingredient"
               value={ingredientsArray[2]}
-              onChange={onChange}
+              onChange={onChange2}
             />
             <input
               type="text"
               placeholder="Ingredient"
               name="ingredient"
               value={ingredientsArray[3]}
-              onChange={onChange}
+              onChange={onChange2}
             />
             <input
               type="text"
               placeholder="Ingredient"
               name="ingredient"
               value={ingredientsArray[4]}
-              onChange={onChange}
+              onChange={onChange2}
             />
             <input
               type="text"
               placeholder="Ingredient"
               name="ingredient"
               value={ingredientsArray[5]}
-              onChange={onChange}
+              onChange={onChange2}
             />
             <input
               type="text"
               placeholder="Ingredient"
               name="ingredient"
               value={ingredientsArray[6]}
-              onChange={onChange}
+              onChange={onChange2}
             />
             <input
               type="text"
               placeholder="Ingredient"
               name="ingredient"
               value={ingredientsArray[7]}
-              onChange={onChange}
+              onChange={onChange2}
             />
             <input
               type="text"
               placeholder="Ingredient"
               name="ingredient"
               value={ingredientsArray[8]}
-              onChange={onChange}
+              onChange={onChange2}
             />
             <input
               type="text"
               placeholder="Ingredient"
               name="ingredient"
               value={ingredientsArray[9]}
-              onChange={onChange}
+              onChange={onChange2}
             />
           </ol>
           <div className="ms-5 mb-3">
