@@ -18,6 +18,7 @@ const RecipeForm = () => {
   const onChange = e => {
     e.preventDefault();
     setRecipe({ ...recipe, [e.target.name]: e.target.value });
+    console.log(ingredients);
   };
 
   const { teamName, recipeName, ingredients, directions, cookTime } = recipe;
@@ -27,8 +28,29 @@ const RecipeForm = () => {
     for (let i = 0; i < 10; i++) {
       ingredients.push("");
     }
+    console.log(ingredients);
+    // eslint-disable-next-line
   }, []);
-
+  
+  const inputArr = [];
+  
+  for (let i = 0; i < 10; i++) {
+    console.log(ingredients[i])
+    // console.log(ingredients.indexOf(ingredients[i]));
+    inputArr.push(
+      <div>
+        <input
+          type="text"
+          placeholder="Ingredient"
+          name="ingredients"
+          value={ingredients[i]}
+          onChange={onChange}
+          />
+      </div>
+    );
+  }
+  
+  console.log(inputArr)
   const onSubmit = e => {
     e.preventDefault();
     addRecipe(recipe);
@@ -52,11 +74,12 @@ const RecipeForm = () => {
           onChange={onChange}
         />
         <p>Ingredients</p>
-        {ingredients.map(ingredient => (
+        {inputArr}
+        {/* {ingredients.map(ingredient => (
           <div>
             <Ingredient ingredient={ingredient} onChange={onChange} />
           </div>
-        ))}
+        ))} */}
         <p>Directions</p>
         <input
           type="text"
