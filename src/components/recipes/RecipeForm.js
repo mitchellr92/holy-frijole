@@ -18,7 +18,7 @@ const RecipeForm = () => {
   const onChange = e => {
     e.preventDefault();
     setRecipe({ ...recipe, [e.target.name]: e.target.value });
-    console.log(ingredients);
+    console.log(e.target.name, e.target.value);
   };
 
   const { teamName, recipeName, ingredients, directions, cookTime } = recipe;
@@ -31,26 +31,24 @@ const RecipeForm = () => {
     console.log(ingredients);
     // eslint-disable-next-line
   }, []);
-  
+
   const inputArr = [];
-  
+
   for (let i = 0; i < 10; i++) {
-    console.log(ingredients[i])
-    // console.log(ingredients.indexOf(ingredients[i]));
+    const ingName = "ingredient" + i;
     inputArr.push(
       <div>
         <input
           type="text"
           placeholder="Ingredient"
-          name="ingredients"
+          name={ingName}
           value={ingredients[i]}
           onChange={onChange}
-          />
+        />
       </div>
     );
   }
-  
-  console.log(inputArr)
+
   const onSubmit = e => {
     e.preventDefault();
     addRecipe(recipe);
