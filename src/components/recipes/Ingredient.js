@@ -1,14 +1,14 @@
 import React from 'react'
 
 const Ingredient = ({ingredient, onChange}) => {
-  console.log(ingredient)
+
   return (
     <div>
       <input
         type="text"
         placeholder="Ingredient"
         name="ingredients"
-        // value={ingredient}
+        value={ingredient}
         onChange={onChange}
       />
     </div>
