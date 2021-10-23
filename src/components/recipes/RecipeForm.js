@@ -18,7 +18,7 @@ const RecipeForm = () => {
   const onChange = e => {
     e.preventDefault();
     setRecipe({ ...recipe, [e.target.name]: e.target.value });
-    console.log(e.target.name, e.target.value);
+    console.log(recipe);
   };
 
   const { teamName, recipeName, ingredients, directions, cookTime } = recipe;
@@ -29,14 +29,10 @@ const RecipeForm = () => {
     inputArr.push("");
   }
 
-  for (let i = 0; i < 10; i++) {
-    ingredients.push("");
-  }
-
   useEffect(() => {
-    // for (let i = 0; i < 10; i++) {
-    //   ingredients.push("hi" + i);
-    // }
+    for (let i = 0; i < 10; i++) {
+      ingredients.push("");
+    }
     // eslint-disable-next-line
   }, []);
 
