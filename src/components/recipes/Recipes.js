@@ -20,8 +20,8 @@ const Recipes = () => {
           <Link to="/add-recipe">Add Your Recipe!</Link>
           <div className="d-flex justify-content-around">
             {recipes.map(recipe => (
-              <div className="">
-                <RecipeItem key={recipe._id} recipe={recipe} />
+              <div className="" key={recipe._id}>
+                <RecipeItem recipe={recipe} />
               </div>
             ))}
           </div>

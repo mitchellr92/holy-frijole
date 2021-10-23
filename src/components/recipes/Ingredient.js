@@ -1,16 +1,16 @@
 import React from "react";
 
-const Ingredient = recipe => {
-  // console.log(recipe);
+const Ingredient = ({ ingredients, onChange, index }) => {
 
-  const [ingredients] = recipe;
-
-  console.log(ingredients)
+  console.log(index);
 
   return (
-    <div>
-      <input type="text" placeholder="Ingredient" name="ingredients" />
-    </div>
+    <input
+      type="text"
+      placeholder="Ingredient"
+      name="ingredients"
+      onChange={onChange}
+    />
   );
 };
 

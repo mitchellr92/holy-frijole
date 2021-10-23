@@ -23,7 +23,7 @@ const RecipeForm = () => {
 
   const { teamName, recipeName, ingredients, directions, cookTime } = recipe;
 
-  // const inputArr = [];
+  const inputArr = [];
 
   useEffect(() => {
     for (let i = 0; i < 10; i++) {
@@ -32,23 +32,23 @@ const RecipeForm = () => {
     // eslint-disable-next-line
   }, []);
 
-  console.log(ingredients, 'hello');
+  // console.log(ingredients, 'hello');
 
-  // for (let i = 0; i < 10; i++) {
-  //   const name = "ingredients" + i;
-  //   const value = ingredients[i];
-  //   inputArr.push(
-  //     <div className="d-flex">
-  //       <input
-  //         type="text"
-  //         placeholder="Ingredient + Amount"
-  //         name={name}
-  //         value={value}
-  //         onChange={onChange}
-  //       />
-  //     </div>
-  //   );
-  // }
+  for (let i = 0; i < 10; i++) {
+    // const name = "ingredients" + i;
+    // const value = ingredients[i];
+    inputArr.push(""
+      // <div className="d-flex">
+      //   <input
+      //     type="text"
+      //     placeholder="Ingredient + Amount"
+      //     name={name}
+      //     value={value}
+      //     onChange={onChange}
+      //   />
+      // </div>
+    );
+  }
 
   const onSubmit = e => {
     e.preventDefault();
@@ -73,9 +73,9 @@ const RecipeForm = () => {
           onChange={onChange}
         />
         <p>Ingredients</p>
-        {ingredients.map(ingredient => (
-          <div>
-            <Ingredient recipe={recipe}/>
+        {inputArr.map((input, index) => (
+          <div key={index}>
+            <Ingredient ingredients={ingredients} onChange={onChange} index={index}/>
           </div>
         ))}
         <p>Directions</p>
